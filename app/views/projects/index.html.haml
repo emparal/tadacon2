@@ -1,0 +1,11 @@
+-@project.each_slice(3) do |projects|
+  .row
+    -projects.each do |project|
+      .col-md-4
+        .project
+          .image_wrapper
+            =link_to project do
+              =image_tag project.image.url(:medium)
+
+          %h2=link_to project.name,project 
+          %p=time_ago_in_words(project.created_at)    

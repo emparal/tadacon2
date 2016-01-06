@@ -1,0 +1,44 @@
+!!! 5
+%html
+%head
+  %title TADA CONSTRUCTION
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags 
+
+%body
+  %nav.navbar.navbar-inverse
+    .container
+      .navbar-brand= link_to "TADA CONSTRUCTION", root_path
+      %ul.nav.navbar-nav.navbar-right
+        %li=link_to "Home"
+        %li=link_to "About us"
+        %li=link_to "Responsibility"
+        %li=link_to "contact us"
+        %li=link_to "Projects" ,new_project_path
+        %li=link_to "Log out",root_path
+
+  .container
+    -flash.each do |name,msg|
+      =content_tag :div, msg, class: "alert"   
+
+  =yield           
+
+
+
+
+
+           
+             
+             
+             
+            
+
+   
+
+
+
+
+
+
+
